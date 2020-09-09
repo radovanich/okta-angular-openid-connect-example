@@ -21,7 +21,7 @@ node {
       sh "npm run ng build"
    }
    
-   stage('Create artifact') {
+   stage('Create artifact after build') {
         sh "tar czvf dist.tar.gz dist"
     }
 
