@@ -27,8 +27,3 @@ steps:
     Contents: '**'  
     ArtifactName: test  
     ArtifactType: Container  
-  
-- task: DownloadPipelineArtifact@2  
-  displayName: 'Download Pipeline Artifact'  
-  inputs:  
-    targetPath: ' $(Build.ArtifactStagingDirectory)/dist/AngularTest'  
