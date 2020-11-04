@@ -14,14 +14,15 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'dist/ng-azure-devops'
+    ArtifactName: 'web-app'
+    publishLocation: 'Container'
+  displayName: 'Publish Artifacts'
 
 - script: |
     npm install -g @angular/cli
     npm install
     ng build --prod
   displayName: 'npm install and build'
-- task: Npm@1
-  inputs:
-    command: publish
-    publishRegistry: useFeed
-    publishFeed: okta-angular-openid-connect-example/angular
