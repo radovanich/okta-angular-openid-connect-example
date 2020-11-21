@@ -23,7 +23,7 @@ node {
    
    stage('Create artifact after build') {
         sh "tar czvf dist.tar.gz dist"
-        sh 'tar -czvf app.${BUILD_ID}.tar.gz my_app'
+        sh 'tar -czvf app.${BUILD_ID}.tar.gz dist'
         archiveArtifacts "**/*.tar.gz"
     }
 }
